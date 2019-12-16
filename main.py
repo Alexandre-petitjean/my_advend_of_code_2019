@@ -1,5 +1,8 @@
+from exo1.exercice import exo1
+
+
 def main():
-    print("Hello World!")
+    exo1()
 
 
 if __name__ == "__main__":
