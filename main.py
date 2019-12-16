@@ -1,8 +1,10 @@
-from exo1.exercice import exo1
+from jour1.exercice import exercice_1
+from jour2.exercice import exercice_2
 
 
 def main():
-    exo1()
+    # exercice_1()
+    exercice_2()
 
 
 if __name__ == "__main__":

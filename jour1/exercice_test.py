@@ -1,6 +1,6 @@
 import unittest
 
-from exo1.exercice import calculate_part_1, calculate_part_2
+from jour1.exercice import calculate_part_1, calculate_part_2
 
 
 class MyTestCase(unittest.TestCase):
