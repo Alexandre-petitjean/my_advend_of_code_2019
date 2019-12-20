@@ -6,9 +6,8 @@ def exercice_2():
     filename = "jour2/exo_2.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
-    my_list[1] = 12
-    my_list[2] = 2
-    print(treatment_part_1(my_list))
+    # print(treatment_part_1(my_list))
+    print(treatment_part_2(my_list))
 
 
 def list_str_to_int(my_list):
@@ -20,7 +19,28 @@ def get_index(i, my_list):
     return [my_list[i + 1], my_list[i + 2], my_list[i + 3]]
 
 
+def treatment_part_2(my_list):
+    resultat = 19690720
+    i = 1
+    j = 0
+    my_list[1] = i
+    my_list[2] = j
+    while treatment(my_list) != resultat:
+        while j <= 99 or treatment(my_list) != resultat:
+            treatment(my_list)
+            j = j + 1
+        i = i + 1
+    print(i)
+    print(j)
+
+
 def treatment_part_1(my_list):
+    my_list[1] = 12
+    my_list[2] = 2
+    return treatment(my_list)
+
+
+def treatment(my_list):
     i = 0
     result = 0
     while i < my_list.__len__():
@@ -36,5 +56,3 @@ def treatment_part_1(my_list):
             result = my_list[0]
         i = i + 4
     return result
-
-
