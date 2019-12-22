@@ -20,18 +20,20 @@ def get_index(i, my_list):
 
 
 def treatment_part_2(my_list):
+
     resultat = 19690720
-    i = 1
-    j = 0
-    my_list[1] = i
-    my_list[2] = j
-    while treatment(my_list) != resultat:
-        while j <= 99 or treatment(my_list) != resultat:
-            treatment(my_list)
-            j = j + 1
-        i = i + 1
-    print(i)
-    print(j)
+    noun = 0
+    my_list[1] = noun
+    while noun <= 99:
+        verb = 0
+        my_list[2] = verb
+        while verb <= 99:
+            if treatment(my_list[:]) == resultat:
+                return (100 * noun) + verb
+            verb = verb + 1
+            my_list[2] = verb
+        noun = noun + 1
+        my_list[1] = noun
 
 
 def treatment_part_1(my_list):
