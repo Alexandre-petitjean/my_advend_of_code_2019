@@ -1,5 +1,6 @@
 from jour1.exercice import exercice_1
 from jour2.exercice import exercice_2
+from jour3.exercice import exercice_3
 
 
 def main():
