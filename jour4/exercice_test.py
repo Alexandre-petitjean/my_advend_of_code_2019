@@ -16,10 +16,31 @@ class MyTestCase(unittest.TestCase):
         my_number = 123789
         self.assertEqual(same_adj_digit(my_number), False)
 
-    def test_good_number(self):
-        my_number = 111111
+    def test_double_number(self):
+        my_number = 112233
         self.assertEqual(same_adj_digit(my_number), True)
         self.assertEqual(digit_never_decrease(my_number), True)
+
+    def test_double_number_part_2(self):
+        my_number = 123444
+        self.assertEqual(same_adj_digit(my_number), False, "123444 is not good")
+
+    def test_double_number_good_part_2(self):
+        my_number = 111122
+        self.assertEqual(same_adj_digit(my_number), True)
+
+    def test_double_number_good_part_2_2(self):
+        my_number = 111222
+        self.assertEqual(same_adj_digit(my_number), False)
+
+    def test_double_number_good_part_2_3(self):
+        my_number = 123345
+        self.assertEqual(same_adj_digit(my_number), False)
+
+    # def test_good_number_part_1(self):
+    #     my_number = 111111
+    #     self.assertEqual(same_adj_digit(my_number), True)
+    #     self.assertEqual(digit_never_decrease(my_number), True)
 
 
 if __name__ == '__main__':

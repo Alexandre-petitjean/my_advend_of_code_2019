@@ -18,8 +18,8 @@ def setup(my_list):
 def treatment(borne_min, borne_max):
     result_list = []
 
-    number = int(borne_min)
-    while number <= int(borne_max):
+    number = int(borne_min) + 1
+    while number < int(borne_max):
         if same_adj_digit(number) and digit_never_decrease(number):
             result_list.append(number)
         number = number + 1
@@ -30,19 +30,23 @@ def treatment(borne_min, borne_max):
 def same_adj_digit(number):
     result = False
     string = str(number)
-    for number in range(string.__len__()):
-        if number < string.__len__() - 1:
-            if string[number] == string[number + 1]:
-                result = True
+    i = 0
+    j = 0
+    while i < string.__len__():
+        while j < string.__len__() and string[i] == string[j]:
+            j = j + 1
+        if j - i == 2:
+            result = True
+        i = i + j
     return result
 
 
 def digit_never_decrease(number):
     result = True
     string = str(number)
-    number = 1
-    while number < string.__len__():
-        if string[number] < string[number - 1]:
+    i = 1
+    while i < string.__len__():
+        if string[i] < string[i - 1]:
             result = False
-        number = number + 1
+        i = i + 1
     return result
