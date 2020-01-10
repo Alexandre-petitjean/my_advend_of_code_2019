@@ -26,15 +26,15 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(same_adj_digit(my_number), False, "123444 is not good")
 
     def test_double_number_good_part_2(self):
-        my_number = 111122
+        my_number = 112222
         self.assertEqual(same_adj_digit(my_number), True)
 
     def test_double_number_good_part_2_2(self):
-        my_number = 111222
-        self.assertEqual(same_adj_digit(my_number), False)
+        my_number = 111122
+        self.assertEqual(same_adj_digit(my_number), True)
 
     def test_double_number_good_part_2_3(self):
-        my_number = 123345
+        my_number = 133456
         self.assertEqual(same_adj_digit(my_number), False)
 
     # def test_good_number_part_1(self):
