@@ -77,15 +77,17 @@ def decode(new_layer):
     return final_layer
 
 
-def draw(layer):
+def draw(layers):
     im = Image.new('1', (25, 6))
-    layer = wrap(layer, 25)
-    for element in layer:
-        for pixel in element:
-            if pixel == '1':
-                im.putpixel((layer.index(element), element.index(pixel)), ImageColor.getcolor('black', '1'))
-            elif pixel == '0':
-                im.putpixel((layer.index(element), element.index(pixel)), ImageColor.getcolor('white', '1'))
+    layers = wrap(layers, 25)
+    for element in layers:
+        i = 0
+        while i < len(element):
+            if element[i] == '1':
+                im.putpixel((i, layers.index(element)), ImageColor.getcolor('white', '1'))
+            else:
+                im.putpixel((i, layers.index(element)), ImageColor.getcolor('black', '1'))
+            i = i + 1
     im.show()
 
 
