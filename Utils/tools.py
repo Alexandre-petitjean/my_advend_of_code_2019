@@ -1,7 +1,14 @@
 import os
+from textwrap import wrap
 
 
 def open_file_line_by_line(filename):
+    """
+    Fonction qui ouvre le fichier passé en paramtre.
+    Puis rentre toutes les ligne dans un tableau.
+    :param filename: Le nom du fichier.
+    :return: un tableau des lignes du fichier.
+    """
     my_list = []
     if os.path.exists(filename):
         with open(filename) as fp:
@@ -13,6 +20,12 @@ def open_file_line_by_line(filename):
 
 
 def open_file_explode_array(filename):
+    """
+    Fonction qui ouvre le fichier passé en paramtre.
+    Puis rentre toutes les elements séparé par une virgule dans un tableau.
+    :param filename: Le nom du fichier.
+    :return: Un tableau des elements du fichier.
+    """
     if os.path.exists(filename):
         with open(filename) as fp:
             line = fp.readline()
