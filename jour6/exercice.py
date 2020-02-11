@@ -1,59 +1,73 @@
-from Utils.tools import open_file_line_by_line
-from anytree import Node, RenderTree, AsciiStyle, findall_by_attr, find
-import sys
-sys.setrecursionlimit(10000)
+from jour6.Tree.Node import Node
+from jour6.Tree.Tree import Tree
 
 
 def exercice_6():
     print("Exercice 6")
     filename = "jour6/jour_6.txt"
-    my_list = open_file_line_by_line(filename)
-    sys.setrecursionlimit(10000)
-    treatement(my_list, "COM")
+    # my_list = open_file_line_by_line(filename)
+    my_list = ["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L"]
+    treatment_part_1(my_list)
 
 
-def find_next_node(my_list, root):
-    for element in my_list:
-        element_array = element.split(")")
-        node = find(root, lambda node: node.name == element_array[0])
-        return element
+def treatment_part_1(my_list):
+    root_name = "COM"
+    tree = make_tree(my_list, root_name)
+    treatment(my_list, tree)
 
 
-def create_root(node_str):
-    node_array = node_str.split(")")
-    node = Node(node_array[0])
-    return Node(node_array[1][:-1], node)
+def delete_rows(my_list, result):
+    for element in result:
+        my_list.remove(element)
 
 
-def add_child_node(last_node, node_str):
-    return Node(node_str, last_node)
+def find_rows(my_list, nom_node):
+    result = [i for i in my_list if nom_node in i]
+    delete_rows(my_list, result)
+    return result
 
 
-def make_tree(my_list, nom_node):
-    # On retrouve le root dans la my_list.
-    node_str = find_next_node(my_list, nom_node)
-    last_node = create_root(node_str)
-    root = last_node.parent
+def make_tree(my_list, root_name):
+    """
+    Make the root and the tree
+    @param my_list:
+    @param root_name:
+    @return:
+    """
+    rows = find_rows(my_list, root_name)
+    obj = rows[0].split(")")
+    root = Node(obj[0], None)
+    Node(obj[1], root)
+    tree = Tree(root)
+    return tree
+
+
+def add_nodes(tree, rows):
+    for row in rows:
+        obj = row.split(")")
+        if obj[0] == tree.lastNode.get_name():
+            parent = tree.lastNode
+        else:
+            parent = tree.find_node_by_name(tree.get_root(), obj[0])
+        Node(obj[1], parent)
+
+
+def get_row(my_list):
+    rows = [my_list[0]]
+    delete_rows(my_list, rows)
+    return rows
+
+
+def calcul_orbit(tree):
+    node = tree.root
+    direct_orbit = 0
+    indirect_orbit = 0
+
+
+def treatment(my_list, tree):
     while my_list.__len__() > 0:
-        node_str = find_next_node(my_list, root)
-        node_array = node_str.split(")")
-        last_node = add_child_node(last_node, node_array[1][:-1])
-    return root
-
-
-def count_orbits(node, nb_orbits):
-    while node.children.__len__() > 0:
-        nb_orbits = nb_orbits + 1
-        if node.ancestors.__len__() > 0:
-            nb_orbits = nb_orbits + (node.ancestors.__len__() - 1)
-        for child in node.children:
-            count_orbits(child, nb_orbits)
-
-    return nb_orbits
-
-
-def treatement(my_list, nom_node):
-    root = make_tree(my_list, nom_node)
-    nb_orbits = 0
-    nb_orbits = count_orbits(root, nb_orbits)
-    return nb_orbits
+        rows = find_rows(my_list, Tree.lastNode.get_name())
+        if rows.__len__() == 0:
+            rows = get_row(my_list)
+        add_nodes(tree, rows)
+    print(tree)

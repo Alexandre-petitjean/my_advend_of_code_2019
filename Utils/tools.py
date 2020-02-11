@@ -7,7 +7,7 @@ def open_file_line_by_line(filename):
         with open(filename) as fp:
             line = fp.readline()
             while line:
-                my_list.append(line)
+                my_list.append(line[:-1])
                 line = fp.readline()
         return my_list
 
