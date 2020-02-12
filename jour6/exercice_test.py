@@ -1,13 +1,15 @@
 import unittest
 
-from jour6.exercice import treatment
+from jour6.exercice import treatment, make_tree
 
 
 class MyTestCase(unittest.TestCase):
 
     def test_treatment_part_1(self):
-        my_list = ["COM)B\n", "B)C\n", "C)D\n", "D)E\n", "E)F\n", "B)G\n", "G)H\n", "D)I\n", "E)J\n", "J)K\n", "K)L\n"]
-        self.assertEqual(treatment(my_list, "COM"), 42, "KO")
+        my_list = ["COM)B", "B)C", "C)D", "D)E", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "K)L"]
+        root_name = "COM"
+        tree = make_tree(my_list, root_name)
+        self.assertEqual(treatment(my_list, tree), 42, True)
 
 
 if __name__ == '__main__':

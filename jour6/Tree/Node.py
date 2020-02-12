@@ -8,8 +8,11 @@ class Node:
         self.children = []
         self.right_siblings = None
         self.parent = parent
+        self.depth = 0
+        Tree.node_list.append(self.name)
         if parent is not None:
             self.parent.add_child(self)
+            self.depth = self.parent.get_depth() + 1
         Tree.lastNode = self
 
     def get_name(self):
@@ -23,6 +26,9 @@ class Node:
 
     def get_right_sibling(self):
         return self.right_siblings
+
+    def get_depth(self):
+        return self.depth
 
     def has_children(self):
         result = False

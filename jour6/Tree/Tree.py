@@ -1,6 +1,7 @@
 class Tree:
 
     lastNode = None
+    node_list = []
 
     def __init__(self, root):
         self.root = root
@@ -11,18 +12,27 @@ class Tree:
     def find_node_by_name(self, node, node_name):
         result = None
         if node.name != node_name:
-            if node.has_children():
-                node = node.children[0]
-                result = self.find_node_by_name(node, node_name)
-            if node.has_sibling() and result is None:
-                node = node.get_right_sibling()
-                result = self.find_node_by_name(node, node_name)
+            i = 0
+            while i < node.children.__len__() and result is None:
+                result = self.find_node_by_name(node.children[i], node_name)
+                i = i + 1
         else:
             result = node
         return result
 
+    def course_tree(self, my_string, node):
+        white_space = " "
+        i = 0
+        while i < node.get_depth():
+            white_space += "  "
+            i = i + 1
+        my_string += white_space + "└" + " " + node.name + "\n"
+        for child in node.children:
+            my_string = self.course_tree(my_string, child)
+        return my_string
+
     def __str__(self):
         node = self.root
-        string = "--- Tree ---\n"
-        string += node.get_name() + "\n"
-        return string
+        chaine = "--- Tree ---\n"
+        chaine = self.course_tree(chaine, node)
+        return chaine
