@@ -43,3 +43,12 @@ def open_file_explode_array_line_by_line(filename):
                 the_list.append(my_list[:])
                 line = fp.readline()
         return the_list
+
+
+def list_str_to_int(my_list):
+    """
+    Transforme la liste de str en liste de int.
+    :rtype: object
+    """
+    for i in range(0, len(my_list)):
+        my_list[i] = int(my_list[i])

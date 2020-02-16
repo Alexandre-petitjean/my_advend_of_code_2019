@@ -1,4 +1,4 @@
-from Utils.tools import open_file_explode_array
+from Utils.tools import open_file_explode_array, list_str_to_int
 
 
 def exercice_2():
@@ -8,11 +8,6 @@ def exercice_2():
     list_str_to_int(my_list)
     # print(treatment_part_1(my_list))
     print(treatment_part_2(my_list))
-
-
-def list_str_to_int(my_list):
-    for i in range(0, len(my_list)):
-        my_list[i] = int(my_list[i])
 
 
 def get_index(i, my_list):
