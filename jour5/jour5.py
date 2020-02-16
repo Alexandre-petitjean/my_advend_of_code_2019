@@ -1,4 +1,4 @@
-from Utils.tools import open_file_explode_array, list_str_to_int
+from Utils.tools import open_file_explode_array
 
 # Déclaration de constante, c'est plus facile pour la lecture du code.
 ADD = '1'
@@ -12,16 +12,25 @@ EQUALS = '8'
 STOP = 99
 
 
-def exercice_9():
+def main():
     """
     Fonction start du jour.
     """
-    print("Jour 9")
-    filename = "jour9/jour9.txt"
+    print("Jour 5")
+    filename = "jour5_input.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
     # treatment_part_1(my_list)
     treatment_part_2(my_list)
+
+
+def list_str_to_int(my_list):
+    """
+    Transforme la liste de str en liste de int.
+    :rtype: object
+    """
+    for i in range(0, len(my_list)):
+        my_list[i] = int(my_list[i])
 
 
 def get_index(i, my_list):
@@ -53,12 +62,6 @@ def treatment_part_2(my_list):
     my_input = 5
     return treatment(my_list, my_input)
 
-def treatment_day_7(software, input):
-    """
-    Traitement le jour 7 qui fonctionne via le intcode computer.
-    """
-    return treatment(software, input)
-
 
 def treatment(my_list, my_input):
     """
@@ -86,8 +89,7 @@ def treatment(my_list, my_input):
             i = i + 4
         elif opcode == IN or opcode == OUT:
             if opcode == IN:
-                op_code_in(i, my_list, my_input[0])
-                my_input.remove(my_input[0])
+                op_code_in(i, my_list, my_input)
             elif opcode == OUT:
                 result = op_code_out(i, my_list)
             i = i + 2
@@ -135,10 +137,11 @@ def op_code_out(i, my_list):
     :param my_list: La liste de int.
     """
     target = my_list[i + 1]
+    print(str(i) + " - " + str(my_list[target]))
     return my_list[target]
 
 
-def op_code_jumpt_jumf(mode1, mode2,opcode, i, my_list):
+def op_code_jumpt_jumf(mode1, mode2, opcode, i, my_list):
     index = get_index(i, my_list)
     if mode1 == '1':
         param1 = index[0]
@@ -183,3 +186,7 @@ def op_code_less_equals(mode1, mode2, opcode, i, my_list):
             result = 1
 
     my_list[index[2]] = result
+
+
+if __name__ == "__main__":
+    main()

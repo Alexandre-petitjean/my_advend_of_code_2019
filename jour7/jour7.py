@@ -1,17 +1,18 @@
-from Utils.tools import open_file_explode_array, list_str_to_int
 from jour5.exercice import treatment_day_7
+
+from Utils.tools import open_file_explode_array, list_str_to_int
 from jour7.Tree.Node import Node
 from jour7.Tree.Tree import Tree
 
 
-def day_7():
-    print("Exercise 7")
-    filename = "jour7/jour_7.txt"
+def main():
+    print("Jour 7")
+    filename = "input_jour7.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
 
     # print(treatment_part_1(my_list, ['0', '1', '2', '3', '4']))
-    print(treatment_part_2(my_list, ['5', '6', '7', '8','9']))
+    print(treatment_part_2(my_list, ['5', '6', '7', '8', '9']))
 
 
 def create_tree(list_input):
@@ -74,3 +75,7 @@ def treatment_part_2(software, numbers):
             thrusters_signal = output_signal
 
     return thrusters_signal
+
+
+if __name__ == "__main__":
+    main()

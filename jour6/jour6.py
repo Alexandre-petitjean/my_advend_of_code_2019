@@ -3,11 +3,10 @@ from jour6.Tree.Node import Node
 from jour6.Tree.Tree import Tree
 
 
-def day_6():
-    print("Exercise 6")
-    filename = "jour6/jour_6.txt"
+def main():
+    print("Jour 6")
+    filename = "input_jour6.txt"
     my_list = open_file_line_by_line(filename)
-    # my_list = ["COM)B", "B)C", "C)D", "E)F", "B)G", "G)H", "D)I", "E)J", "J)K", "D)E", "K)L"]
     # treatment_part_1(my_list)
     treatment_part_2(my_list)
 
@@ -117,3 +116,7 @@ def orbital_transfers(tree, me_name, santa_name):
     santa = tree.find_node_by_name(tree.get_root(), santa_name)
     distance = tree.get_distance_between_node(me, santa)
     return distance
+
+
+if __name__ == "__main__":
+    main()

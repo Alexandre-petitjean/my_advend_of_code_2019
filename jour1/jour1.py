@@ -3,9 +3,9 @@ import math
 from Utils.tools import open_file_line_by_line
 
 
-def exercice_1():
-    print("Exercice 1")
-    filename = "jour1/exo_1.txt"
+def main():
+    print("Jour 1")
+    filename = "input_jour_1.txt"
     my_list = open_file_line_by_line(filename)
     # print(calculate_part_1(my_list))
     print(calculate_part_2(my_list))
@@ -37,3 +37,7 @@ def fuel_require(i):
     if calc < 0:
         calc = 0
     return calc
+
+
+if __name__ == "__main__":
+    main()

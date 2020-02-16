@@ -1,15 +1,16 @@
 from textwrap import wrap
+
 from PIL import Image, ImageColor
 
 import Utils.tools
 
 
-def exercice_8():
+def main():
     """
     Fonction start du jour.
     """
     print("Jour 8")
-    filename = "jour8/jour8.txt"
+    filename = "input_jour8.txt"
     my_list = Utils.tools.open_file_line_by_line(filename)
 
     wide = 25
@@ -103,3 +104,7 @@ def count_digit(element, digit):
         if char == digit:
             count = count + 1
     return count
+
+
+if __name__ == "__main__":
+    main()

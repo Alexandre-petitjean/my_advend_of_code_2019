@@ -1,10 +1,9 @@
 import unittest
 
-from jour4.exercice import digit_never_decrease, same_adj_digit
+from jour4.jour4 import digit_never_decrease, same_adj_digit
 
 
 class MyTestCase(unittest.TestCase):
-
     borne_min = 273025
     borne_max = 767253
 

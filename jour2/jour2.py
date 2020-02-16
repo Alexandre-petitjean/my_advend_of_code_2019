@@ -1,9 +1,9 @@
 from Utils.tools import open_file_explode_array, list_str_to_int
 
 
-def exercice_2():
-    print("Exercice 2")
-    filename = "jour2/exo_2.txt"
+def main():
+    print("Jour 2")
+    filename = "input_jour_2.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
     # print(treatment_part_1(my_list))
@@ -52,3 +52,7 @@ def treatment(my_list):
             result = my_list[0]
         i = i + 4
     return result
+
+
+if __name__ == "__main__":
+    main()

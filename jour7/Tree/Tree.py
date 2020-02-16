@@ -1,5 +1,3 @@
-
-
 class Tree:
     lastNode = None
     node_list = []
@@ -40,12 +38,12 @@ class Tree:
 
     def get_list_number_by_depth(self, depth):
         result = []
-        return self.get_list_number(self.root,depth, result)
+        return self.get_list_number(self.root, depth, result)
 
     def get_list_number(self, node, depth, result):
         for child in node.children:
             if child.depth != depth:
-                result =self.get_list_number(child, depth, result)
+                result = self.get_list_number(child, depth, result)
             else:
                 result.append(child.value)
         return result

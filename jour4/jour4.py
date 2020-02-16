@@ -1,9 +1,9 @@
 from Utils.tools import open_file_line_by_line
 
 
-def exercice_4():
-    print("Exercice 4")
-    filename = "jour4/jour4.txt"
+def main():
+    print("Jour 4")
+    filename = "input_jour_4.txt"
     my_list = open_file_line_by_line(filename)
     borne = setup(my_list)
     result = treatment(borne[0], borne[1])
@@ -50,3 +50,7 @@ def digit_never_decrease(number):
             result = False
         i = i + 1
     return result
+
+
+if __name__ == "__main__":
+    main()

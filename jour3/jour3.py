@@ -12,9 +12,9 @@ UP = 'U'
 DOWN = 'D'
 
 
-def exercice_3():
-    print("Exercice 3")
-    filename = "jour3/exo_3.txt"
+def main():
+    print("Jour 3")
+    filename = "input_jour_3.txt"
     my_list = open_file_explode_array_line_by_line(filename)
     # print(treatment_part1(my_list))
     print(treatment_part2(my_list))
@@ -162,3 +162,7 @@ def fewest_step(wires_path, intersections):
         if result is None or result > step:
             result = step
     return result
+
+
+if __name__ == "__main__":
+    main()

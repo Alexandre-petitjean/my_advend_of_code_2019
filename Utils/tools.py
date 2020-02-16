@@ -1,5 +1,4 @@
 import os
-from textwrap import wrap
 
 
 def open_file_line_by_line(filename):
@@ -14,7 +13,7 @@ def open_file_line_by_line(filename):
         with open(filename) as fp:
             line = fp.readline()
             while line:
-                my_list.append(line[:-1])
+                my_list.append(line)
                 line = fp.readline()
         return my_list
 
