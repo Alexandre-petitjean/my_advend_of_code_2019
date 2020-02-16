@@ -22,6 +22,12 @@ class MyTestCase(unittest.TestCase):
         amplifier_input = [[1, 0, 4, 3, 2]]
         self.assertEqual(treatment(software, amplifier_input), 65210, True)
 
+    def test_treatment_part_2_1(self):
+        software = [3, 26, 1001, 26, -4, 26, 3, 27, 1002, 27, 2, 27, 1, 27, 26,
+                    27, 4, 27, 1001, 28, -1, 28, 1005, 28, 6, 99, 0, 0, 5]
+        amplifier_input = [[9, 8, 7, 6, 5]]
+        self.assertEqual(treatment(software, amplifier_input), 139629729, True)
+
 
 if __name__ == '__main__':
     unittest.main()

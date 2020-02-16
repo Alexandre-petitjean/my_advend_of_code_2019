@@ -1,6 +1,5 @@
 from Utils.tools import open_file_explode_array, list_str_to_int
 from jour5.exercice import treatment_day_7
-from jour7.Numero import Numero
 from jour7.Tree.Node import Node
 from jour7.Tree.Tree import Tree
 
@@ -11,14 +10,14 @@ def day_7():
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
 
-    amplifier_input = get_amplifier_input()
-    print(treatment(my_list, amplifier_input))
+    # print(treatment_part_1(my_list, ['0', '1', '2', '3', '4']))
+    print(treatment_part_2(my_list, ['5', '6', '7', '8','9']))
 
 
 def create_tree(list_input):
     root_value = ""
     for element in list_input:
-        root_value += str(element.value)
+        root_value += str(element)
     root = Node(root_value, None)
     tree = Tree(root)
     return tree
@@ -26,11 +25,11 @@ def create_tree(list_input):
 
 def make_sub_tree(excep_list, list_input, parent):
     for element in list_input:
-        if element.value not in excep_list:
+        if element not in excep_list:
             value = ""
             for number in excep_list:
                 value += number
-            Node(value + element.value, parent)
+            Node(value + element, parent)
     for child in parent.get_children():
         excep_list.append(child.value[child.depth - 1])
         excep_list = make_sub_tree(excep_list, list_input, child)
@@ -43,24 +42,35 @@ def make_tree(tree, list_input):
     return tree
 
 
-def get_amplifier_input():
-    list_input = [Numero.ZERO, Numero.UN, Numero.DEUX, Numero.TROIS, Numero.QUATRE]
+def get_amplifier_input(list_input):
     tree = create_tree(list_input)
     tree = make_tree(tree, list_input)
     return tree.get_list_number_by_depth(5)
 
 
-def test_amplifier_by_input(software, input_list):
-    result = 0
-    for input in input_list:
-        result = treatment_day_7(software[:], [int(input), result])
-    return result
-
-
-def treatment(software, amplifier_input):
+def treatment_part_1(software, numbers):
     thrusters_signal = 0
-    for input in amplifier_input:
-        output_signal = test_amplifier_by_input(software, input)
+    amplifier_input = get_amplifier_input(numbers)
+
+    for input_list in amplifier_input:
+        output_signal = 0
+        for input in input_list:
+            output_signal = treatment_day_7(software[:], [int(input), output_signal])
         if thrusters_signal < output_signal:
             thrusters_signal = output_signal
+
+    return thrusters_signal
+
+
+def treatment_part_2(software, numbers):
+    thrusters_signal = 0
+    amplifier_input = get_amplifier_input(numbers)
+
+    for input_list in amplifier_input:
+        output_signal = 0
+        for input in input_list:
+            output_signal = treatment_day_7(software, [int(input), output_signal])
+        if thrusters_signal < output_signal:
+            thrusters_signal = output_signal
+
     return thrusters_signal
