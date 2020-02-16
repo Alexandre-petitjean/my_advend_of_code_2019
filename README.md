@@ -10,6 +10,8 @@ This is my participation to the Advent of code 2019 !
 
 I have 14 :star: !!
 
+my statistics : https://adventofcode.com/2019/leaderboard/private/view/771565
+
 - [x] Day 1 :star::star:
 - [x] Day 2 :star::star:
 - [x] Day 3 :star::star:
