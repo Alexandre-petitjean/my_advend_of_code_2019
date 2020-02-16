@@ -20,7 +20,6 @@ def get_index(i, my_list):
 
 
 def treatment_part_2(my_list):
-
     resultat = 19690720
     noun = 0
     my_list[1] = noun
