@@ -12,12 +12,12 @@ EQUALS = '8'
 STOP = 99
 
 
-def exercice_5():
+def exercice_9():
     """
     Fonction start du jour.
     """
-    print("Jour 5")
-    filename = "jour5/jour5.txt"
+    print("Jour 9")
+    filename = "jour9/jour9.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
     # treatment_part_1(my_list)

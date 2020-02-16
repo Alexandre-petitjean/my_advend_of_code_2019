@@ -5,6 +5,7 @@ from jour4.exercice import exercice_4
 from jour5.exercice import exercice_5
 from jour6.exercice import day_6
 from jour8.exercice import exercice_8
+from jour9.exercice import exercice_9
 
 
 def main():
@@ -15,6 +16,7 @@ def main():
     # exercice_5()
     # day_6()
     #exercice_8()
+    exercice_9()
 
 
 if __name__ == "__main__":
