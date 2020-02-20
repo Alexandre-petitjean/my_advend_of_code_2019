@@ -1,6 +1,12 @@
+"""
+Day 2 of the Advent of code
+--- Day 2: 1202 Program Alarm ---
+"""
 from Utils.tools import open_file_explode_array, list_str_to_int
 
 FILENAME = "input_day_2.txt"
+RESULT = 19690720
+
 ADD = 1
 MULT = 2
 STOP = 99
@@ -25,14 +31,14 @@ def treatment_part_2(my_list):
     :param my_list: The input list for the intcode computer.
     :return: (100 * noun) + verb
     """
-    resultat = 19690720
+
     noun = 0
     my_list[1] = noun
     while noun <= 99:
         verb = 0
         my_list[2] = verb
         while verb <= 99:
-            if treatment(my_list[:]) == resultat:
+            if treatment(my_list[:]) == RESULT:
                 return (100 * noun) + verb
             verb = verb + 1
             my_list[2] = verb
