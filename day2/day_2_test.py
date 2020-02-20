@@ -1,6 +1,6 @@
 import unittest
 
-from jour2.jour2 import treatment_part_1
+from day2.day_2 import treatment_part_1
 
 
 class MyTestCase(unittest.TestCase):

@@ -6,6 +6,8 @@ import math
 
 from Utils.tools import open_file_line_by_line
 
+FILENAME = "input_day_1.txt"
+
 
 def main():
     """
@@ -13,10 +15,12 @@ def main():
     Start point of the day.
     """
     print("--- Day 1: The Tyranny of the Rocket Equation ---")
-    filename = "input_day_1.txt"
-    my_list = open_file_line_by_line(filename)
-    print("Part 1 : " + str(calculate_part_1(my_list)))
-    print("Part 2 : " + str(calculate_part_2(my_list)))
+
+    my_list = open_file_line_by_line(FILENAME)
+    print("Part 1 : ")
+    print((calculate_part_1(my_list)))
+    print("Part 2 : ")
+    print((calculate_part_2(my_list)))
 
 
 def calculate_part_1(my_list):
