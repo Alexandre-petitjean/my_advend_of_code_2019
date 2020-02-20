@@ -11,8 +11,7 @@ FILENAME = "input_day_1.txt"
 
 def main():
     """
-    Main
-    Start point of the day.
+    Main function of the file.
     """
     print("--- Day 1: The Tyranny of the Rocket Equation ---")
 

@@ -1,11 +1,12 @@
 """
 Day 3 of the avent of code.
-https://adventofcode.com/2019/day/3
-Problem : Two wires cross each other, we need to find the closest intersection of wire.
+--- Day 3: Crossed Wires ---
 """
 from Utils.tools import open_file_explode_array_line_by_line
 
 # Constant
+FILENAME = "input_day_3.txt"
+
 RIGHT = 'R'
 LEFT = 'L'
 UP = 'U'
@@ -13,10 +14,15 @@ DOWN = 'D'
 
 
 def main():
-    print("Jour 3")
-    filename = "input_jour_3.txt"
-    my_list = open_file_explode_array_line_by_line(filename)
-    # print(treatment_part1(my_list))
+    """
+    Main function of the file.
+    """
+    print("Day 3")
+
+    my_list = open_file_explode_array_line_by_line(FILENAME)
+    print("Part 1 : ")
+    print(treatment_part1(my_list))
+    print("Part 2 : ")
     print(treatment_part2(my_list))
 
 
@@ -54,9 +60,9 @@ def treatment(my_list):
         y = 0
         one_wire_path = []
         for element in wire:
-            # Direction du fil.
+            # Wire direction.
             first_letter = element[0]
-            # Distance a parcourir.
+            # Distance to run.
             iteration = int(element[1:])
             one_wire_path = calcul_path(first_letter, iteration, x, y, one_wire_path)
             if first_letter == RIGHT:
@@ -73,14 +79,15 @@ def treatment(my_list):
 
 def calcul_path(direction, iteration, x, y, one_wire_path):
     """
-    Calcule Le chemin parcouru par le fil et renvoi les coordonnées de chaque case ou est passé le morceaux fil.
-    :param direction: La direction du fil.
-    :param iteration: Le nombre de case que le fil a parcouru.
-    :param x: La position x actuelle du fil.
-    :param y: La position y actuelle du fil.
-    :return: Retourne une chaine de caratere, avec les positions x;y du morceaux de fil chaque case est séparé par une virgule.
+    Calculation of the wire path.
+    Return each coordinate of the wire path.
+    :param direction: The wire direction.
+    :param iteration: The number of square of the wire path.
+    :param x: The actual x coordinate of the wire.
+    :param y: The actual y coordinate of the wire.
+    :param one_wire_path: The list of each coordinate of the wire path.
+    :return: A string with the coordinate x;y of the wire separate with a comma.
     """
-    result = ""
     y_str = str(y)
     x_str = str(x)
     if len(one_wire_path) > 0:
@@ -90,25 +97,21 @@ def calcul_path(direction, iteration, x, y, one_wire_path):
         target = x + iteration
         while x <= target:
             one_wire_path.append(str(x) + ";" + y_str)
-            # result += "," + str(x) + ";" + y_str
             x = x + 1
     elif direction == LEFT:
         target = x - iteration
         while x >= target:
             one_wire_path.append(str(x) + ";" + y_str)
-            # result += "," + str(x) + ";" + y_str
             x = x - 1
     elif direction == UP:
         target = y + iteration
         while y <= target:
             one_wire_path.append(x_str + ";" + str(y))
-            # result += "," + x_str + ";" + str(y)
             y = y + 1
     else:
         target = y - iteration
         while y >= target:
             one_wire_path.append(x_str + ";" + str(y))
-            # result += "," + x_str + ";" + str(y)
             y = y - 1
     return one_wire_path
 
@@ -119,11 +122,11 @@ def find_intersection(wire_path):
     :param wire_path: List of coordinate of the wires path.
     :return: The list of intersection coordinate.
     """
-    # On retire le premier element de chaque list qui est 0;0
+    # Delete the first index of each list.
     first_wire = wire_path[0][1:]
     second_wire = wire_path[1][1:]
-    # compare les element de la list fist_wire avec celle de second_wire
-    # et retourne une liste des elements qui sont commun aux 2 listes.
+    # compare the elememt of each list.
+    # return the list of similar element.
     return set(first_wire).intersection(second_wire)
 
 
