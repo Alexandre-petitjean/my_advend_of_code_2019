@@ -49,6 +49,7 @@ def treatment_part_2(my_list):
 def treatment_part_1(my_list):
     """
     Treatment of the part 1 of the day.
+    The first two elements of the entry list are exchanged by 12 and 2.
     :param my_list: The input list for the intcode computer.
     :return: the result of the intcode computer get_wires_path.
     """
@@ -67,27 +68,13 @@ def treatment(my_list):
     result = 0
     while i < my_list.__len__():
         if my_list[i] == ADD:
-            index = get_index(i, my_list)
-            calc = my_list[index[0]] + my_list[index[1]]
-            my_list[index[2]] = calc
+            my_list[my_list[i + 3]] = my_list[my_list[i + 1]] + my_list[my_list[i + 2]]
         elif my_list[i] == MULT:
-            index = get_index(i, my_list)
-            calc = my_list[index[0]] * my_list[index[1]]
-            my_list[index[2]] = calc
+            my_list[my_list[i + 3]] = my_list[my_list[i + 1]] * my_list[my_list[i + 2]]
         elif my_list[i] == STOP:
             result = my_list[0]
         i = i + 4
     return result
-
-
-def get_index(i, my_list):
-    """
-    Get the index for the get_wires_path of the opcode.
-    :param i: the current index in the list.
-    :param my_list: The input list.
-    :return: a Array of index.
-    """
-    return [my_list[i + 1], my_list[i + 2], my_list[i + 3]]
 
 
 if __name__ == "__main__":
