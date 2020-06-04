@@ -50,7 +50,7 @@ def treatment_part_1(my_list):
     """
     Treatment of the part 1 of the day.
     :param my_list: The input list for the intcode computer.
-    :return: the result of the intcode computer treatment.
+    :return: the result of the intcode computer get_wires_path.
     """
     my_list[1] = 12
     my_list[2] = 2
@@ -82,7 +82,7 @@ def treatment(my_list):
 
 def get_index(i, my_list):
     """
-    Get the index for the treatment of the opcode.
+    Get the index for the get_wires_path of the opcode.
     :param i: the current index in the list.
     :param my_list: The input list.
     :return: a Array of index.

@@ -17,8 +17,7 @@ def main():
     """
     Main function of the file.
     """
-    print("Day 3")
-
+    print("--- Day 3: Crossed Wires ---")
     my_list = open_file_explode_array_line_by_line(FILENAME)
     print("Part 1 : ")
     print(treatment_part1(my_list))
@@ -32,7 +31,7 @@ def treatment_part1(my_list):
     :param my_list: The input.
     :return: The part 1 answer.
     """
-    wire_path = treatment(my_list)
+    wire_path = get_wires_path(my_list)
     intersection = find_intersection(wire_path)
     return manhattan_calcul(intersection)
 
@@ -43,14 +42,14 @@ def treatment_part2(my_list):
     :param my_list: The input.
     :return: The part 2 answer.
     """
-    wires_path = treatment(my_list)
+    wires_path = get_wires_path(my_list)
     intersection = find_intersection(wires_path)
     return fewest_step(wires_path, intersection)
 
 
-def treatment(my_list):
+def get_wires_path(my_list):
     """
-    Principal treatment.
+    Principal get_wires_path.
     :param my_list: The input.
     :return: The path of the two wires.
     """
@@ -137,13 +136,13 @@ def manhattan_calcul(intersection):
     :param intersection: List of coordinate.
     :return: The manhattan distance of the shortest intersection point.
     """
-    result: int = None
+    result = -1
     for element in intersection:
         position = element.split(";")
         x = abs(int(position[0]))
         y = abs(int(position[1]))
         calcul = x + y
-        if result is None or result > calcul:
+        if result == -1 or result > calcul:
             result = calcul
     return result
 
@@ -154,7 +153,7 @@ def fewest_step(wires_path, intersections):
     :param wires_path: the path of the wires.
     :param intersections: the coordinate of the intersections.
     """
-    result: int = None
+    result = -1
     for coordinate in intersections:
         step = 0
         for path in wires_path:
@@ -162,7 +161,7 @@ def fewest_step(wires_path, intersections):
             while coordinate != path[i]:
                 i = i + 1
             step += i
-        if result is None or result > step:
+        if result == -1 or result > step:
             result = step
     return result
 

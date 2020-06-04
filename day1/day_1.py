@@ -30,8 +30,7 @@ def calculate_part_1(my_list):
     """
     result = 0
     for i in my_list:
-        calc = fuel_require(int(i))
-        result += calc
+        result += fuel_require(int(i))
     return result
 
 
@@ -57,9 +56,7 @@ def fuel_require(i):
     :param i: The mass of a module.
     :return: The require fuel for one module.
     """
-    calc = i / 3
-    calc = math.floor(calc)
-    calc = calc - 2
+    calc = math.floor(i / 3) - 2
     if calc < 0:
         calc = 0
     return calc

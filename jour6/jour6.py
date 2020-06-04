@@ -28,7 +28,7 @@ def treatment_part_2(my_list):
 
 def treatment(my_list, tree):
     """
-    This is the main treatment of the day.
+    This is the main get_wires_path of the day.
     @rtype: Tree
     """
     while my_list.__len__() > 0:

@@ -1,6 +1,10 @@
+"""
+Day 5 of the avent of code.
+--- Day 5: Sunny with a Chance of Asteroids ---
+"""
 from Utils.tools import open_file_explode_array
 
-# Déclaration de constante, c'est plus facile pour la lecture du code.
+# Const
 ADD = '1'
 MULT = '2'
 IN = '3'
@@ -10,23 +14,25 @@ JUMPF = '6'
 LESS = '7'
 EQUALS = '8'
 STOP = 99
+FILENAME = "input_day_5.txt"
 
 
 def main():
     """
-    Fonction start du jour.
+    Main function of the file.
     """
-    print("Jour 5")
-    filename = "jour5_input.txt"
-    my_list = open_file_explode_array(filename)
+    print("Day 5: Sunny with a Chance of Asteroids")
+    my_list = open_file_explode_array(FILENAME)
     list_str_to_int(my_list)
-    # treatment_part_1(my_list)
-    treatment_part_2(my_list)
+    print("Part 1 : ")
+    print(treatment_part_1(my_list))
+    print("Part 2 : ")
+    print(treatment_part_2(my_list))
 
 
 def list_str_to_int(my_list):
     """
-    Transforme la liste de str en liste de int.
+    Transforme la liste de string en liste de int.
     :rtype: object
     """
     for i in range(0, len(my_list)):
