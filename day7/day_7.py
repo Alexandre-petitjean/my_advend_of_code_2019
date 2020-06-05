@@ -1,13 +1,13 @@
-from jour5.exercice import treatment_day_7
+from day5.exercice import treatment_day_7
 
 from Utils.tools import open_file_explode_array, list_str_to_int
-from jour7.Tree.Node import Node
-from jour7.Tree.Tree import Tree
+from day7.Tree.Node import Node
+from day7.Tree.Tree import Tree
 
 
 def main():
     print("Jour 7")
-    filename = "input_jour7.txt"
+    filename = "input_day_7.txt"
     my_list = open_file_explode_array(filename)
     list_str_to_int(my_list)
 

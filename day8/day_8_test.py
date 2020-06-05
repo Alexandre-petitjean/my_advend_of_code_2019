@@ -1,6 +1,6 @@
 import unittest
 
-from jour8.jour8 import explode_size, treatment_part_2
+from day8.day_8 import explode_size, treatment_part_2
 
 
 class MyTestCase(unittest.TestCase):

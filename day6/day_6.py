@@ -1,11 +1,15 @@
+"""
+Day 6 of the avent of code.
+--- Day 6: Universal Orbit Map ---
+"""
 from Utils.tools import open_file_line_by_line
-from jour6.Tree.Node import Node
-from jour6.Tree.Tree import Tree
+from day6.Tree.Node import Node
+from day6.Tree.Tree import Tree
 
 
 def main():
     print("Jour 6")
-    filename = "input_jour6.txt"
+    filename = "input_day_6.txt"
     my_list = open_file_line_by_line(filename)
     # treatment_part_1(my_list)
     treatment_part_2(my_list)

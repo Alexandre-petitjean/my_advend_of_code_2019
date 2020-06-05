@@ -1,4 +1,4 @@
-from jour6.Tree.Tree import Tree
+from day6.Tree.Tree import Tree
 
 
 class Node:

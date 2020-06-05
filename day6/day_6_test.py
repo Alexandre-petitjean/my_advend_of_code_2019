@@ -1,6 +1,6 @@
 import unittest
 
-from jour6.jour6 import treatment, make_tree
+from day6.day_6 import treatment, make_tree
 
 
 class MyTestCase(unittest.TestCase):

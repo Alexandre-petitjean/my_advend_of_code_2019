@@ -10,7 +10,7 @@ def main():
     Fonction start du jour.
     """
     print("Jour 8")
-    filename = "input_jour8.txt"
+    filename = "input_day_8.txt"
     my_list = Utils.tools.open_file_line_by_line(filename)
 
     wide = 25
