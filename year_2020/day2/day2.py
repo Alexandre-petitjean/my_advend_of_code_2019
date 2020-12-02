@@ -2,6 +2,12 @@ from year_2020.tools import open_file_line_by_line
 
 
 def is_valid_part1(condition, pwd):
+    """
+    Test is a password is valid followed the specified conditions.
+    @param condition: "min - max char" Min and Max iteration of the char.
+    @param pwd: The password to test.
+    @return: A bool. True if the password is valid or False if not.
+    """
     mini, string = condition.split("-")
     maxi = string.split(" ")[0]
     char = condition[-1]
@@ -18,6 +24,12 @@ def is_valid_part1(condition, pwd):
 
 
 def is_valid_part2(condition, pwd):
+    """
+    Test is a password is valid followed the specified conditions.
+    @param condition: "pos1-pos2 char" Possible position of the char, the char can only be in one position.
+    @param pwd: The password to test.
+    @return: A bool. True if the password is valid or False if not.
+    """
     pos1, string = condition.split("-")
     pos2 = string.split(" ")[0]
     char = condition[-1]
@@ -34,6 +46,12 @@ def is_valid_part2(condition, pwd):
 
 
 def nb_of_valid_pwd(input_list, part):
+    """
+    Get the number of valid password.
+    @param input_list: each element are "number-number char: string"
+    @param part: 1 or 2. The part of the day.
+    @return: The number of valid password
+    """
     result = 0
     for line in input_list:
         element = line.split(":")

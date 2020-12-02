@@ -2,6 +2,11 @@ from year_2020.tools import open_file_line_by_line, list_str_to_int
 
 
 def find_sum_2020_part1(input_list):
+    """
+    Find the two integers whose sum is equal to 2020.
+    @param input_list: The list of int.
+    @return: The result of multiplying the two integers.
+    """
     i = 0
     result = 0
     while i < len(input_list) and result == 0:
@@ -15,6 +20,11 @@ def find_sum_2020_part1(input_list):
 
 
 def find_sum_2020_part2(input_list):
+    """
+    Find the three integers whose sum is equal to 2020.
+    @param input_list: The list of int.
+    @return: The result of multiplying the three integers.
+    """
     i = 0
     result = 0
     while i < len(input_list) and result == 0:
