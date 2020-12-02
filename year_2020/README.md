@@ -4,12 +4,12 @@ I'm still learning and to increase my Python skills I'll code in this language.
 
 ### My progress :
 
-I have 2 :star: !!
+I have 4 :star: !!
 
 my statistics : 
 
 - [x] Day 1 :star::star:
-- [ ] Day 2 
+- [x] Day 2 :star::star:
 - [ ] Day 3 
 - [ ] Day 4 
 - [ ] Day 5 
