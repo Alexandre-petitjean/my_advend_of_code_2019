@@ -7,7 +7,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_calc_part1(self):
         my_list = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
-        self.assertEqual(calc_nb_augmentation(my_list), 7, "KO")
+        self.assertEqual(calc_nb_augmentation(my_list, 0), 7, "KO")
 
     def test_calc_part2(self):
         my_list = [199, 200, 208, 210, 200, 207, 240, 269, 260, 263]
