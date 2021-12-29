@@ -1,6 +1,6 @@
 import unittest
 
-from year_2021.day5.main import dessine_carte, count_number
+from year_2021.day5.main import dessine_carte_part1, count_number
 
 
 class MyTestCase(unittest.TestCase):
@@ -14,7 +14,7 @@ class MyTestCase(unittest.TestCase):
     ]
 
     def test_partie(self):
-        carte = dessine_carte(self.lignes)
+        carte = dessine_carte_part1(self.lignes)
         self.assertEqual(5, count_number(carte, 2))
 
 

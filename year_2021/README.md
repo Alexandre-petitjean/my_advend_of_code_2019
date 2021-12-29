@@ -1,17 +1,17 @@
-Advent of code 2020
+Advent of code 2021
 ===
 
 ### My progress :
 
-I have 4 :star: !!
+I have 10 :star: !!
 
 my statistics : 
 
 - [x] Day 1 :star::star:
 - [x] Day 2 :star::star:
 - [x] Day 3 :star::star:
-- [ ] Day 4 
-- [ ] Day 5 
+- [x] Day 4 :star::star:
+- [x] Day 5 :star::star:
 - [ ] Day 6 
 - [ ] Day 7 
 - [ ] Day 8 
