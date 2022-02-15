@@ -1,16 +1,23 @@
 import unittest
 
-from year_2021.day6.main import get_lantern_fish_list, status_lantern_fish, spawn_lanternfish
+from year_2021.day6.main import spawn_lanternfish, get_lantern_fish_dict
 
 
 class MyTestCase(unittest.TestCase):
+
     lignes = [3, 4, 3, 1, 2]
 
-    def test_partie(self):
-        lantern_fish_list = get_lantern_fish_list(self.lignes)
-        self.assertEqual(spawn_lanternfish(lantern_fish_list, 18), 26)
-        lantern_fish_list = get_lantern_fish_list(self.lignes)
-        self.assertEqual(spawn_lanternfish(lantern_fish_list, 80), 5934)
+    def setUp(self) -> None:
+        self.lantern_fish_dict = get_lantern_fish_dict(self.lignes)
+
+    def test_18(self):
+        self.assertEqual(spawn_lanternfish(self.lantern_fish_dict, 18), 26)
+
+    def test_80(self):
+        self.assertEqual(spawn_lanternfish(self.lantern_fish_dict, 80), 5934)
+
+    def test_256(self):
+        self.assertEqual(spawn_lanternfish(self.lantern_fish_dict, 256), 26984457539)
 
 
 if __name__ == '__main__':
