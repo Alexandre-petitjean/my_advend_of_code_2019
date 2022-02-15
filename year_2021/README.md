@@ -1,6 +1,8 @@
 Advent of code 2021
 ===
 
+[<img height="300" src="https://upload.wikimedia.org/wikipedia/commons/b/bb/US_Navy_040730-N-1234E-002_PCU_Virginia_%28SSN_774%29_returns_to_the_General_Dynamics_Electric_Boat_shipyard.jpg" width="450"/>](http://wikipedia.org)
+
 ### My progress :
 
 I have 12 :star: !!
