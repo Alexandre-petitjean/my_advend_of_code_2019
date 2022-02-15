@@ -15,7 +15,7 @@ my statistics :
 - [x] Day 4 :star::star:
 - [x] Day 5 :star::star:
 - [x] Day 6 :star::star:
-- [ ] Day 7 
+- [x] Day 7 :star::star:
 - [ ] Day 8 
 - [ ] Day 9
 - [ ] Day 10
