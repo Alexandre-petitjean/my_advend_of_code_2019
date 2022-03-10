@@ -5,7 +5,7 @@ Advent of code 2021
 
 ### My progress :
 
-I have 12 :star: !!
+I have 15 :star: !!
 
 my statistics : 
 
@@ -16,7 +16,7 @@ my statistics :
 - [x] Day 5 :star::star:
 - [x] Day 6 :star::star:
 - [x] Day 7 :star::star:
-- [ ] Day 8 
+- [ ] Day 8 :star:
 - [ ] Day 9
 - [ ] Day 10
 - [ ] Day 11
