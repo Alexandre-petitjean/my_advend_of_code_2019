@@ -23,17 +23,18 @@ def get_sum_2(lines: list[str]):
                 j = i + 1
                 while j < len(line) and not line[j].isdigit() and not line[i:j] in VALID_DIGIT.values():
                     j += 1
-                digit = [k for k,v in VALID_DIGIT.items() if line[i:j] == v]
+                digit = [k for k, v in VALID_DIGIT.items() if line[i:j] == v]
                 if len(digit):
                     digits.append(digit[0])
             i += 1
         res += int(f'{digits[0]}{digits[-1]}')
     return res
 
+
 def main():
-    calibration_inputs = open_file_line_by_line('input.txt')
-    print(get_sum(calibration_inputs))
-    print(get_sum_2(calibration_inputs))
+    inputs = open_file_line_by_line('input.txt')
+    print(get_sum(inputs))
+    print(get_sum_2(inputs))
 
 
 if __name__ == '__main__':
