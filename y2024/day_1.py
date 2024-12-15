@@ -11,7 +11,7 @@ def build_lists(lines: list[str]) -> tuple[list[int], list[int]]:
 
     """
 
-    left_numbers, right_numbers = zip(*[(int(left), int(right)) for left, right in (line.split('   ') for line in lines)])
+    left_numbers, right_numbers = zip(*[(int(left), int(right)) for left, right in (line.split() for line in lines)])
     left_numbers, right_numbers = list(left_numbers), list(right_numbers)
 
     left_numbers.sort()
